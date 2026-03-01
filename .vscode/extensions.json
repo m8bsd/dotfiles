@@ -6,6 +6,5 @@
     "esbenp.prettier-vscode",
     "rangav.vscode-thunder-client",
     "golang.go",
-    "bmewburn.vscode-intelephense-client",
   ]
 }
