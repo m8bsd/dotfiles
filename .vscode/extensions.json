@@ -1,8 +1,6 @@
 {
   "recommendations": [
     "dzhavat.bracket-pair-toggler",
-    "ms-vscode.cpptools",
-    "ms-vscode.cmake-tools",
     "esbenp.prettier-vscode",
     "rangav.vscode-thunder-client",
     "golang.go",
