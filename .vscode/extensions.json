@@ -3,6 +3,5 @@
     "dzhavat.bracket-pair-toggler",
     "esbenp.prettier-vscode",
     "rangav.vscode-thunder-client",
-    "golang.go",
   ]
 }
