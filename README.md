@@ -11,6 +11,6 @@ I rely heavily on keyboard shortcuts for my favourite applications. In fact, mos
 
 In addition to these major parts of my working environment, I lean on a number of tools, programming languages, message queues, and database systems to build my software. To name a few:
 
-Tools: rsync, ssh, git, TrueCrypt, Lsyncd, ranger, tinc
-Languages: bash, Python, JavaScript (nodejs), Lua, Go, C, PHP
-MQ and DB: Redis, RabbitMQ, ZeroMQ, MySQL, Postgres, SQLite
+1. Tools: rsync, ssh, git, TrueCrypt, Lsyncd, ranger, tinc
+2. Languages: bash, Python, JavaScript (nodejs), Lua, Go, C, PHP
+3. MQ and DB: Redis, RabbitMQ, ZeroMQ, MySQL, Postgres, SQLite
