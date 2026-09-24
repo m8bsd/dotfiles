@@ -5,7 +5,7 @@ First and foremost is FreeBSD. On top of that, I use the i3 tiling window manage
 
 On top of i3, I spend almost all of my time in terminals (urxvt) and web browser (Chrome). I run my terminals inside a tmux session, which lets me do fun things like detach from running sessions, broadcast keystrokes to multiple terminals at once (useful when you're doing sysadmin chores on a cluster), and not losing your work if your terminal emulator crashes on you.
 
-I do all of my coding in IntelliJ IDEA, and use Vim when I need to edit files from a command line.
+I do all of my coding in IntelliJ IDEA, CLion and use Vim when I need to edit files from a command line.
 
 I do all of my web browsing in Chrome. I’m one of the more enthusiastic people you’ll ever meet when it comes to talking about Chrome add-ons, so here’s the ones that I use on a daily basis: AdBlocker Ultimate, Authenticator, Ghostery AdBlocker for Privacy, Pie Adblock - A Powerful Free Ad Blocker, uBlock Origin Lite, Wappalyzer - Technology profiler.
 
@@ -18,9 +18,9 @@ In addition to these major parts of my working environment, I lean on a number o
 1. Tools and Fonts: ssh, git, "'CaskaydiaMono Nerd Font Mono'"
 2. Languages: Zsh, JAVA
 3. MQ and DB: Redis, RabbitMQ, ZeroMQ, MySQL, SQLite
-## What hardware do you use?
+## What hardware do I use?
 Gone are the days when I had 15 desktop computers in my bedroom as build clusters for FreeBSD. Today I’m more of a minimalist, prioritizing mobility over screen size or computing power.
 
-I presently carry a MacBook Air 13-inch, M3, 2024 around with me wherever I go. I maxed out the RAM (8GB) and put an SSD in it, and it’s just a beautiful little machine. I’m not a big fan of macOS though, so it runs FreeBSD.
+I presently carry a MacBook Air 13-inch, M3, 2024 around with me wherever I go. I maxed out the RAM (16GB), and it’s just a beautiful little machine. I’m not a big fan of macOS though, so it runs FreeBSD.
 
 I use an iPhone 13 phone.
