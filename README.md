@@ -18,3 +18,9 @@ In addition to these major parts of my working environment, I lean on a number o
 1. Tools and Fonts: ssh, git, "'CaskaydiaMono Nerd Font Mono'"
 2. Languages: Zsh, JAVA
 3. MQ and DB: Redis, RabbitMQ, ZeroMQ, MySQL, SQLite
+## What hardware do you use?
+Gone are the days when I had 15 desktop computers in my bedroom as build clusters for FreeBSD. Today I’m more of a minimalist, prioritizing mobility over screen size or computing power.
+
+I presently carry a MacBook Air 13-inch, M3, 2024 around with me wherever I go. I maxed out the RAM (8GB) and put an SSD in it, and it’s just a beautiful little machine. I’m not a big fan of macOS though, so it runs FreeBSD.
+
+I use an iPhone 13 phone.
