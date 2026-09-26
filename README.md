@@ -21,6 +21,6 @@ In addition to these major parts of my working environment, I lean on a number o
 ## What hardware do I use?
 Gone are the days when I had 15 desktop computers in my bedroom as build clusters for FreeBSD. Today I’m more of a minimalist, prioritizing mobility over screen size or computing power.
 
-I presently carry a MacBook Air 13-inch, M3, 2024 around with me wherever I go. I maxed out the RAM (16GB), and it’s just a beautiful little machine. I’m not a big fan of macOS though, so it runs FreeBSD.
+I presently carry a MacBook Air 13-inch, M3, 2024 around with me wherever I go.
 
 I use an iPhone 13 phone.
