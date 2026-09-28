@@ -6,4 +6,7 @@
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools",
   },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+  },
 }
