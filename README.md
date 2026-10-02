@@ -23,4 +23,4 @@ Gone are the days when I had 15 desktop computers in my bedroom as build cluster
 
 I presently carry a MacBook Air 13-inch, M3, 2024 around with me wherever I go.
 
-I use an iPhone 13 phone.
+I use an iPhone 13.
