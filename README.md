@@ -19,7 +19,7 @@ In addition to these major parts of my working environment, I lean on a number o
 2. Languages: Zsh, GO, C
 3. MQ and DB: Redis, RabbitMQ, ZeroMQ, MySQL, SQLite
 ## What hardware do I use?
-Gone are the days when I had 15 desktop computers in my bedroom as build clusters for FreeBSD. Today I’m more of a minimalist, prioritizing mobility over screen size or computing power.
+Today I’m more of a minimalist, prioritizing mobility over screen size or computing power.
 
 I presently carry a MacBook Air 13-inch, M3, 2024 around with me wherever I go.
 
