@@ -1,0 +1,14 @@
+# minimal usable .zshrc, 05feb2013  +leah+
+setopt emacs nobeep nonomatch shnullcmd extendedglob \
+       bashautolist noautomenu noalwayslastprompt
+autoload -Uz compinit && compinit
+WORDCHARS='*?_-.[]~&;$%^+'
+# prompt tweaks, 20jul2017  +leah+
+PS1='%B%m%(?.. %??)%(1j. %j&.)%b %2~%B%#%b '
+# minimal usable history, 12nov2015  +leah+
+setopt histignoredups histignorespace incappendhistory extendedhistory
+SAVEHIST=9000 HISTSIZE=9000 HISTFILE=~/.zsh_history
+# minimal functions, 08sep2017  +leah+
+g() { LC_ALL=C grep --exclude "*~" -r -P ${@:?regexp missing} }
+l() { find ${2:-.} ! -type d | sed 's:^\./::' | egrep "$1" }
+sprunge() { cat $@ | curl -sF 'sprunge=<-' http://sprunge.us }

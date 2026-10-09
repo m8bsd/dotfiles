@@ -1,0 +1,326 @@
+# == ZSH ARCHIVE
+
+# less commmonly used functions go here
+# 29mar2016  +chris+
+# 18oct2016  +chris+
+# 06may2023  +leah+
+
+# Colors, like ls(1).
+# 25mar2007  +chris+
+# 25feb2011  +chris+
+# 17nov2017  +leah+  try disabling
+export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32'
+LS_COLORS=
+#zstyle ':completion:*' list-colors ''
+#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+#alias ls='LC_COLLATE=C ls -F --dereference-command-line-symlink-to-dir --color=auto'
+
+# Complete from tmux pane.
+# http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
+# 20jan2012  +chris+
+_tmux_pane_words() {
+  local expl
+  local -a w
+  if [[ -z "$TMUX_PANE" ]]; then
+    _message "not running inside tmux!"
+    return 1
+  fi
+  w=( ${(u)=$(tmux capture-pane \; show-buffer \; delete-buffer)} )
+  _wanted values expl 'words from current tmux pane' compadd -a w
+}
+zle -C tmux-pane-words-prefix   complete-word _generic
+bindkey '^X^T' tmux-pane-words-prefix
+zstyle ':completion:tmux-pane-words-prefix:*' completer _tmux_pane_words
+zstyle ':completion:tmux-pane-words-prefix:*' ignore-line current
+
+
+# search dirstack with ~[name]
+# 16nov2013  +chris+
+# 29mar2016  +chris+  archived, obsolete due to zz
+#                     (could use zsh_directory_name with zz...)
+_mydirstack() {
+  local -a lines list
+  for d in $dirstack; do
+    lines+="$(($#lines+1)) -- $d"
+    list+="$#lines"
+  done
+  _wanted -V directory-stack expl 'directory stack' \
+    compadd "$@" -ld lines -S']/' -Q -a list
+}
+zsh_directory_name() {
+  case $1 in
+    c) _mydirstack;;
+    n) case $2 in
+         <0-9>) reply=($dirstack[$2]);;
+         *) reply=($dirstack[(r)*$2*]);;
+       esac;;
+    d) false;;
+  esac
+}
+
+# pstop -- ps with top-like output
+# 16aug2011  +chris+
+pstop() {
+  ps -eo pid,user,pri,ni,vsz,rsz,stat,pcpu,pmem,time,comm --sort -pcpu |
+    head "${@:--n 20}"
+}
+
+# vman -- easier browsing of vim docs
+# 02sep2016  +chris+
+vman() { vim "+:help $*" +:only }
+
+# perflog -- log performance metrics of process using looped ps
+# e.g. perflog -C firefox
+perflog() {
+  while sleep 1; do
+    ps h -o pcpu,bsdtime,vsz,rsz,pmem,pid,comm "$@"
+  done | awk 'function p(x) { return x > 10240 ? int(x/1024) "M" : x "k" }
+              { split($2, t, ":")
+                if (t[1]>60) $2 = sprintf("%dh%02d:%02d", t[1]/60, t[1]%60, t[2])
+                printf("%s %3d%%CPU %9s  %6s %6s %2d%%MEM  %5d %s\n",
+                       strftime("%H:%M:%S"), $1, $2, p($3), p($4), $5, $6, $7) }'
+}
+
+# sfetch (sftp|scp)://HOST/PATH [DEST] -- file by scp/sftp with resuming
+# 19sep2011  +chris+
+sfetch() {
+  curl -k -u $USER -C- ${2:--O}${2:+-o $2} $1
+}
+
+# ind -- run command in directory
+# 24apr2017  +leah+
+ind() { ( cd "${1?no directory given}" && shift && "$@"; ) }
+_ind() {
+  local state ret=1
+  _arguments ':directory:_files -/' '*::arguments:->normal' && ret=0
+  if [[ -n $state ]]; then
+    pushd -q "$words[1]" || return 1
+    shift words
+    (( CURRENT-- ))
+    _normal && ret=0
+    popd -q
+  fi
+  return ret
+}
+compdef _ind ind
+
+# s -- select line using vim
+# 23jul2015  +chris+
+s() {
+  vim - '+set nomod | map <buffer><C-M> :.w >>/proc/self/fd/3 \| :qall!<C-M> |
+           vmap <buffer><C-M> :'\''<,'\''>w >>/proc/self/fd/3 \| :qall!<C-M>' \
+    3>&1 >/dev/tty
+}
+
+# use-context -- enable ConTeXt paths
+# 16aug2011  +chris+
+use-context() {
+  export TEXMFOS=/opt/context-minimals/texmf-linux-64
+  export TEXMFCACHE=$HOME/.cache/texmf-cache
+  export PATH=$TEXMFOS/bin:$PATH
+  export OSFONTDIR="$HOME/.fonts;/usr/share/fonts;"
+}
+
+# vv -- open file:line: in vim, defaulting to X selection
+# 28aug2013  +chris+
+vv() {
+  case ${1:=$(xsel)} in
+    *:<->:) v ${1%:};;
+    *:<->) [[ -e ${1%:*} ]] && vim +${1##*:} ${1%:*};;
+    *) [[ -e $1 ]] && vim $1
+  esac
+}
+
+# nf [-NUM] [COMMENTARY...] -- never forget last N commands
+nf() {
+  local n=-1
+  [[ "$1" = -<-> ]] && n=$1 && shift
+  fc -lnt ": %Y-%m-%d %H:%M ${*/\%/%%} ;" $n | tee -a .neverforget
+}
+
+# hsh FILES... - paste to hsh.link
+# 02sep2014  +chris+
+hsh() {
+  cat "$@" | curl -sF 'content=<-' http://hsh.link/
+}
+
+# hshclip CLIPBOARD FILES... - copy/paste to hsh.link clipboard
+# 03sep2014  +chris+
+hshclip() {
+  local clip=${1?no clipboard name given}
+  shift
+  case "$1" in
+    +) shift; cat -- "$@" | curl -sF 'content=<-' -F append=1 http://hsh.link/$clip;;
+    *) if [ -t 0 -a "$#" -eq 0 ]; then
+         curl -s http://hsh.link/$clip
+       else     
+         cat -- "$@" | curl -sF 'content=<-' http://hsh.link/$clip
+       fi
+  esac
+}
+alias xx="hshclip chris2"
+
+# xless - run less in seperate terminal
+# 05oct2014  +chris+
+xless() {
+  {
+    exec {stdin}<&0 {stderr}>&2
+    exec urxvt -e sh -c "less ${(j: :)${(qq)@}} </dev/fd/$stdin 2>/dev/fd/$stderr"
+  } &!
+}
+
+# Increase/decrease last numeric word.
+# 04jan2013  +chris+  using incarg
+# 12mar2013  +chris+  revert to own implementation, improved
+_increase_number() {
+  local -a match mbegin mend
+  [[ $LBUFFER =~ '([0-9]+)[^0-9]*$' ]] &&
+    LBUFFER[mbegin,mend]=$(printf %0${#match[1]}d $((10#$match+${NUMERIC:-1})))
+}
+zle -N increase-number _increase_number
+bindkey '^Xa' increase-number
+bindkey -s '^Xx' '^[-^Xa'
+
+alias mplayer='ALSA_OUTPUT=mplayer mpv'
+
+# pacgrep -- search arch package contents
+# 21nov2011  +chris+
+# 08dec2011  +chris+
+pacgrep() {
+  PATTERN=${1:?pattern missing}
+  shift
+  pacman -Qlq "$@" | xargs grep -d skip -e "$PATTERN"
+}
+_pacgrep() {
+  _pacman  # force autoload
+  _arguments : '1:pattern:' '*:package:_pacman_completions_installed_packages'
+}
+compdef _pacgrep pacgrep
+
+# pastefix - fix unwrapped pastes
+# 09jan2017  +leah+
+pastefix() { perl -pe 's/ {10,}(\n\z)?/\n/g if length > 80' }
+
+# toodoo -- tiny, recursive todo tracker
+# - todo  ? maybe todo  x done  X wontfix
+# 15jul2017  +leah+
+toodoo() {
+  grep -Hn -e '^[-?xX] .*'${1:-.} ${^@[2,-1]}/**/TODO(N) |
+    sort -t: -k3 |
+    sed -e 's/[^:]*:[^:]*:/&	/' -e "s:$PWD/::" | column -s '	' -t
+}
+
+# ccd SEG - change into first existing directory like PWD with segment SEG
+# http://www.linta.de/~aehlig/techblog/2015-12-19.html
+# 10aug2016  +chris+
+ccd() {
+  [[ $# != 1 ]] && return 1
+  local i os d op=print
+  [[ -t 1 ]] && op=cd
+  local -a segs
+  segs=("${(s:/:)PWD}")
+  for (( i=$#segs; i > 1; i-- )) do
+     d=${(j:/:)segs[0,i-1]}/$1/${(j:/:)segs[i+1,-1]}
+     if [ -d $d ]; then
+        $op $d
+        return $?
+     fi
+  done
+  return 1
+}
+_ccd() {
+  local -a segs
+  local d
+  segs=("${(s:/:)PWD}")
+  for (( i=$#segs; i > 1; i-- )) do
+    for d in ${(j:/:)segs[0,i-1]}/*/${(j:/:)segs[i+1,-1]}; do
+      ss=("${(s:/:)d}")
+      [[ $segs[i] != $ss[i] ]] && compadd -J "level $i" -- $ss[i]
+    done
+  done
+}
+compdef _ccd ccd
+
+# xqq - shorter xq
+# 05nov2017  +leah+
+xqq() {
+  xq "$@" | sed '/^repository/q'
+}
+
+#### moved on 06may2023  +leah+
+
+alias packer='COLOR=NO packer'
+
+# 02feb2019  +leah+
+# 05dec2019  +leah+
+# L -- l, with fzf
+L() { 
+  local p=$argv[-1]
+  [[ -d $p ]] && { argv[-1]=(); } || p=''
+  lr -0 -t 'type != d' $p | fzf --read0 -0 +s -e ${@:+-q "${@:-.} "}
+}
+
+# oldv -- browse list of file names (stdin or arglist) with vim
+# 14jul2015  +chris+
+oldv() {{
+  tput smcup
+  { [[ $# = 0 ]] && cat || print -l -- "$@" } |
+    vim - '+set nomod | map <buffer><C-M> <C-W>F<C-W>_' \
+          '+silent g/\%^\%$/cq!'  # quit on empty file
+} always {
+  tput rmcup
+}}
+# this didnt understand file:line:
+#   vim - '+set nomod | map <buffer><C-M> :1000sp <cfile><C-M>'
+
+# vl -- browse l with vim/v
+# 25mar2015  +chris+
+# 14jul2015  +chris+
+# 14aug2019  +leah+
+vl() { l "$@" | sort | oldv }
+
+# ichmod -- interactive mode change, using vared
+# 24jul2019  +leah+
+ichmod() {
+  local file perm oldperm map stat; integer special
+  typeset -A map=( --- 0 --x 1 -w- 2 -wx 3 r-- 4 r-x 5 rw- 6 rwx 7 )
+
+  for file; do
+    zstat -H stat -s $file || continue
+    perm=$stat[mode]
+    oldperm=$perm
+    vared -i beginning-of-line -f undefined-key perm
+    [[ $perm = $oldperm ]] && continue
+    [[ $perm[1] = $oldperm[1] ]] || { print -u2 "can't change file type of $file"; continue }
+    special=0
+    [[ $perm[4]  = [sS] ]] && special+=4
+    [[ $perm[7]  = [sS] ]] && special+=2
+    [[ $perm[10] = [tT] ]] && special+=1
+    perm=${perm//[st]/x}
+    perm=${perm//[ST]/-}
+    chmod -v $special$map[$perm[2,4]]$map[$perm[5,7]]$map[$perm[8,10]] $file
+  done
+}
+
+# hman - format manpage as monospace HTML
+# 10feb2018  +leah+
+hman() { man -T utf8 "$@" | ul | aha }
+
+# xr - execute for recursive tree
+# 19oct2019  +leah+
+xr() { local c=(); for a { [[ -d $a ]] && c+=( $a/**/*(^/) ) || c+=("$a") }; $c }
+
+# kcns NS - change k8s namespace for this shell session
+# 06jun2019  +leah+
+kcns() {
+  : ${KUBECONFIG:=~/.kube/config}
+  KUBECONFIG=${KUBECONFIG#/tmp/.kcns.$$:}
+  kubectl config view --minify -o json |
+    jq '{kind,apiVersion,"contexts":
+          ( .contexts[0].context |= . + {"namespace":"'$1'"} ).contexts}' \
+    >/tmp/.kcns.$$
+  export KUBECONFIG=/tmp/.kcns.$$:$KUBECONFIG
+}
+alias kn='kubectl get nodes'
+alias kp='kubectl get pods'
+alias ka='kubectl apply -f'

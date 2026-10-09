@@ -1,0 +1,246 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Vi all the things
+set -o vi
+# But make sure ^L, ^A, and ^E still work when in insert mode (muscle memory)
+bind -m vi-insert "\C-l":clear-screen
+bind -m vi-insert "\C-a":beginning-of-line
+bind -m vi-insert "\C-e":end-of-line
+
+# Locale
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
+# Large command history
+export HISTSIZE=10000
+# Don't remember duplicate commands, or commands starting with a space
+export HISTCONTROL=ignoreboth
+
+# Directory bookmarks
+# export CDPATH=.:~/.marks/
+# function mark() {
+#   ln -sr "$(pwd)" ~/.marks/"$1"
+# }
+
+# ------------------------------------------------------------------------
+# Aliases
+# ------------------------------------------------------------------------
+alias d='docker'
+alias e='nvim'
+alias g='livegrep'
+alias j='[ -f justfile ] && just -f ./justfile || just -f deploy/justfile'
+alias p='podman'
+alias r='ranger_cd'
+alias u='cd ..'
+alias y='yazi_cd'
+alias br='ddcutil setvcp 10'
+alias hx='helix'
+alias ll='ls -lh'
+alias lt='ls -lhtr'
+alias op='netstat -tanl | grep LISTEN | sort'
+alias tc='tmux load-buffer -'
+alias vi='nvim'
+alias gst='git status -uno'
+alias opp='lsof -P -n -i tcp -s TCP:LISTEN'
+alias vim='nvim'
+alias grep='grep --color'
+alias nsum='awk "{ sum += \$1 } END { print sum }"'
+alias stayup="systemd-inhibit --what=sleep:handle-lid-switch sleep 1d"
+alias json2csv="jq -r '(map(keys) | add | unique) as \$cols | map(. as \$row | \$cols | map(\$row[.])) as \$rows | \$cols, \$rows[] | @csv'"
+
+livegrep() {
+  rg --line-number --no-heading --color=always "$@" \
+    | fzf --ansi \
+      --delimiter ':' \
+      --nth=1 \
+      --preview '
+        line={2}
+        height=$FZF_PREVIEW_LINES
+        half=$((height / 2))
+
+        start=$((line - half))
+        [ $start -lt 1 ] && start=1
+
+        end=$((start + height))
+
+        bat --style=numbers --color=always \
+            --highlight-line $line \
+            --line-range ${start}:${end} \
+            {1}
+      ' \
+      --preview-window=top:50% \
+      --bind 'ctrl-u:page-up,ctrl-d:page-down' \
+      --bind 'enter:execute(nvim +{2} {1})'
+}
+
+ranger_cd() {
+  # https://github.com/ranger/ranger/blob/master/examples/shell_automatic_cd.sh
+  temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
+  ranger --choosedir="$temp_file" -- "${@:-$PWD}"
+  if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
+    cd -- "$chosen_dir"
+  fi
+  rm -f -- "$temp_file"
+}
+
+yazi_cd() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd <"$tmp"
+  [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
+}
+
+if [ -n "$WAYLAND_DISPLAY" ]; then
+  alias xc='wl-copy'
+  alias xp='wl-paste'
+else
+  alias xc='xclip -selection clipboard'
+  alias xp='xclip -selection clipboard -o'
+fi
+
+# Python has some very handy treats
+alias http='python3 -m http.server'
+alias json='python3 -m json.tool'
+
+# Quick encryption/decryption
+#alias enc='openssl aes-256-cbc -pbkdf2 -salt'
+#alias dec='openssl aes-256-cbc -pbkdf2 -salt -d'
+
+alias dos2unix="awk '{ sub(\"\r$\", \"\"); print }'"
+alias unix2dos="awk 'sub(\"$\", \"\r\")'"
+
+# ------------------------------------------------------------------------
+# Per-OS variants
+# ------------------------------------------------------------------------
+if [ "$(uname)" = "Linux" ]; then
+  alias ls='ls --color'
+  if [ "$(uname -o)" = "Android" ]; then
+    alias open='termux-open'
+  else
+    alias open='xdg-open'
+  fi
+
+  # Look for an active X display
+  if [ -z "$DISPLAY" -a "$(pgrep xinit)" != "" ]; then
+    export DISPLAY=:0
+  fi
+
+  # Look for an active SSH agent - we lose it in tmux juggling sometimes.
+  # If one isn't found, start it.
+  if [ "$(uname -o)" = "Android" ]; then
+    # Use the Termux-provided facility to hunt for an active agent.
+    source $HOME/../usr/bin/source-ssh-agent
+  else
+    pid="$(pgrep ssh-agent)"
+    if [ -n "$pid" ]; then
+      export SSH_AGENT_PID=$pid
+      export SSH_AUTH_SOCK=$(/bin/ls -1 $HOME/.ssh/agent/* | head -n 1)
+    else
+      eval $(ssh-agent)
+    fi
+  fi
+
+  # Look for the Sway IPC socket - we lose it in tmux juggling.
+  pid=$(pgrep -x sway)
+  if [ -n "$pid" ]; then
+    export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$pid.sock
+
+    # Yep, you guessed it - we also lose the DBus session.
+    #
+    # We don't look at the primary 'sway' process, because someone (dbus?)
+    # is starting it in a way that's munging the perms in /proc/<pid> such
+    # that we can't read them, only root.
+    pid=$(pgrep -x swayidle)
+    if [ -n "$pid" ]; then
+      ds=$(xargs -n 1 -0 </proc/$pid/environ | grep DBUS_SESSION_BUS_ADDRESS)
+      if [ "$ds" ]; then
+        eval export $ds
+      fi
+      unset ds
+    fi
+  fi
+else
+  alias ls='ls -G'
+  alias firefox='open -a Firefox'
+
+  # Colorize Mac/BSD ls output
+  export CLICOLOR=1
+  export LSCOLORS=ExGxFxdxCxDxDxBxBxacac
+
+  for sock in /tmp/launch-*/Listeners /private/tmp/com.apple.launchd*/Listeners; do
+    if [ -S "$sock" ]; then
+      export SSH_AUTH_SOCK="$sock"
+      break
+    fi
+  done
+fi
+
+# ------------------------------------------------------------------------
+# Application configs
+# ------------------------------------------------------------------------
+# Elixir
+export ERL_AFLAGS="-kernel shell_history enabled"
+# Ask Firefox to enable Wayland support
+export MOZ_ENABLE_WAYLAND=1
+# XDG
+if [ -n "$WAYLAND_DISPLAY" ]; then
+  export XDG_SESSION_TYPE=wayland
+  export XDG_CURRENT_DESKTOP=sway
+fi
+
+# ------------------------------------------------------------------------
+# Path fiddling
+# ------------------------------------------------------------------------
+export PATH=$PATH:$HOME/bin:$HOME/bin/sway:$HOME/.local/bin:/usr/local/sbin
+# Perl
+export PATH=$PATH:/usr/bin/vendor_perl
+# Node
+export PATH=$PATH:$HOME/node_modules/.bin
+if [ "$(uname)" = "Darwin" ]; then
+  export NODE_PATH=/usr/local/lib/node_modules
+else
+  export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
+fi
+# Go
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+# DotNet
+export PATH=$PATH:$HOME/.dotnet/tools
+# Opencode
+export PATH=/home/jvinet/.opencode/bin:$PATH
+
+# ------------------------------------------------------------------------
+# Preferred applications
+# ------------------------------------------------------------------------
+export EDITOR=nvim
+export PAGER='less -r'
+export BROWSER=firefox
+export TERMINAL=ghostty
+# Colorized manpages with bat(1)
+if [ "$(type -p bat)" ]; then
+  export MANROFFOPT="-c"
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
+export TERM=xterm-256color
+[ -n "$TMUX" ] && export TERM="tmux-256color"
+
+PS1='[\u@\h \W]\$ '
+if [ -n "$JAIL" ]; then
+  PS1="($JAIL) $PS1"
+fi
+
+# Report foreground-command completions to tmux (prefix-! window mode).
+# The config owns the helper location, keeping this independent of installation.
+if [[ -n ${TMUX:-} && -n ${TMUX_PANE:-} ]]; then
+  _tmux_job_watch_path=$(tmux display-message -p -t "$TMUX_PANE" '#{@job-watch-script}' 2>/dev/null)
+  if [[ -n $_tmux_job_watch_path && -r ${_tmux_job_watch_path%/*}/tmux-job-watch.bash ]]; then
+    source "${_tmux_job_watch_path%/*}/tmux-job-watch.bash"
+  fi
+  unset _tmux_job_watch_path
+fi
