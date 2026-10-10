@@ -14,5 +14,5 @@ I rely heavily on keyboard shortcuts for my favourite applications. In fact, mos
 In addition to these major parts of my working environment, I lean on a number of tools, fonts, programming languages, message queues, and database systems to build my software. To name a few:
 
 1. Tools and Fonts: ssh, git, ranger (file manager), "'CaskaydiaMono Nerd Font Mono'"
-2. Languages: Zsh, JavaScript (Node.js), TypeScript, C, C++
-3. MQ and DB: Redis, RabbitMQ, ZeroMQ, MySQL, PostgreSQL, SQLite
+2. Languages: Zsh, JavaScript (Node.js), C
+3. MQ and DB: Redis, RabbitMQ, ZeroMQ, PostgreSQL
