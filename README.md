@@ -15,4 +15,4 @@ In addition to these major parts of my working environment, I lean on a number o
 
 1. Tools and Fonts: ssh, git, ranger (file manager), "'CaskaydiaMono Nerd Font Mono'"
 2. Languages: Zsh, JavaScript (Node.js), C
-3. MQ and DB: Redis, RabbitMQ, ZeroMQ, PostgreSQL
+3. MQ and DB: Redis, RabbitMQ, PostgreSQL
