@@ -3,16 +3,14 @@ A dumping ground for my personal dotfiles that keep my computing life organized 
 ## What software do I use?
 First and foremost is macOS. On top of that, I use the AeroSpace tiling window manager, which I've customized with a couple patches and a number of homegrown utilities that I use to keep myself productive.
 
-On top of AeroSpace, I spend almost all of my time in terminals and web browser. I run my terminals inside a tmux session, which lets me do fun things like detach from running sessions, broadcast keystrokes to multiple terminals at once (useful when you're doing sysadmin chores on a cluster), and not losing your work if your terminal emulator crashes on you.
+On top of AeroSpace, I spend almost all of my time in terminals and web browser (Chrome). I run my terminals inside a tmux session, which lets me do fun things like detach from running sessions, broadcast keystrokes to multiple terminals at once (useful when you're doing sysadmin chores on a cluster), and not losing your work if your terminal emulator crashes on you.
 
-I do all of my coding in Xcode, and use vim when I need to edit files from a command line.
-
-I do all of my web browsing in Chrome. I’m one of the more enthusiastic people you’ll ever meet when it comes to talking about Chrome add-ons, so here’s the ones that I use on a daily basis: AdBlocker Ultimate, Authenticator, Ghostery AdBlocker for Privacy, Pie Adblock - A Powerful Free Ad Blocker, uBlock Origin Lite, Wappalyzer - Technology profiler.
+I do all of my coding in IntelliJ IDEA, and use Vim when I need to edit files from a command line.
 
 I rely heavily on keyboard shortcuts for my favourite applications. In fact, most of the time I have the mouse/trackpad disabled. I can run my window manager, editor, and web browser (mostly) without an active pointing device. This eases any RSI strain on my wrist/elbow and probably helps keep my mind sharp as I memorize hundreds of key combinations. Probably.
 
 In addition to these major parts of my working environment, I lean on a number of tools, fonts, programming languages, message queues, and database systems to build my software. To name a few:
 
 1. Tools and Fonts: ssh, git, "'CaskaydiaMono Nerd Font Mono'"
-2. Languages: Zsh, Swift, C++, C
-3. MQ and DB: Redis, RabbitMQ, PostgreSQL
+2. Languages: Zsh, JAVA, C++, C
+3. MQ and DB: Redis, RabbitMQ, MySQL
