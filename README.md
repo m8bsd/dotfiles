@@ -3,14 +3,18 @@ A dumping ground for my personal dotfiles that keep my computing life organized 
 ## What software do I use?
 First and foremost is macOS. On top of that, I use the AeroSpace tiling window manager, which I’ve customized with a couple patches and a number of homegrown utilities that I use to keep myself productive. Examples include a custom notification system, dynamic per-workspace LCD backlighting, and a few other sundry scripts that integrate with AeroSpace over its IPC channel.
 
-On top of AeroSpace, I spend almost all of my time in terminals and web browser (Chrome). I run my terminals inside a tmux session, which lets me do fun things like detach from running sessions, broadcast keystrokes to multiple terminals at once (useful when you're doing sysadmin chores on a cluster), and not losing your work if your terminal emulator crashes on you.
+On top of AeroSpace, I spend almost all of my time in terminals and web browser. I run my terminals inside a tmux session, which lets me do fun things like detach from running sessions, broadcast keystrokes to multiple terminals at once (useful when you're doing sysadmin chores on a cluster), and not losing your work if your terminal emulator crashes on you.
 
-I do all of my coding in IntelliJ IDEA, and use Vim when I need to edit files from a command line.
+In half of my multitudinous terminal sessions, you will find Vim instances. Vim has been my editor of choice since I left the womb, and because of the entrenched muscle memory of typing things like “:wq”, I can barely function in other editors.
+
+I typically use two web browsers in tandem. Because I’m fairly cognizant of web security, I run one “clean” browser (Safari) and one “dirty” browser (Chrome). The browser I use depends on the website I’m visiting.
+
+For example, since a Facebook widget exists on basically every site on our green Earth, Facebook can easily see what sites you visit on any given day. So I will only login to Facebook on my dirty browser through an Incognito window. If I’m inspecting the DOM of a web application or trawling through code on GitHub, then I’ll use my clean browser, which has been more fine-tuned to my tastes with customized configuration and useful browser extensions.
 
 I rely heavily on keyboard shortcuts for my favourite applications. In fact, most of the time I have the mouse/trackpad disabled. I can run my window manager, editor, and web browser (mostly) without an active pointing device. This eases any RSI strain on my wrist/elbow and probably helps keep my mind sharp as I memorize hundreds of key combinations. Probably.
 
 In addition to these major parts of my working environment, I lean on a number of tools, fonts, programming languages, message queues, and database systems to build my software. To name a few:
 
-1. Tools and Fonts: ssh, git, "'CaskaydiaMono Nerd Font Mono'"
+1. Tools and Fonts: ssh, git, IntelliJ IDEA, "'CaskaydiaMono Nerd Font Mono'"
 2. Languages: Zsh, JAVA, C
 3. MQ and DB: Redis, RabbitMQ, MySQL
