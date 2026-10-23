@@ -5,7 +5,7 @@ First and foremost is macOS. On top of that, I use the AeroSpace tiling window m
 
 On top of AeroSpace, I spend almost all of my time in terminals and web browser. My terminal font is "'CaskaydiaMono Nerd Font Mono'". I run my terminals inside a tmux session, which lets me do fun things like detach from running sessions, broadcast keystrokes to multiple terminals at once (useful when you're doing sysadmin chores on a cluster), and not losing your work if your terminal emulator crashes on you.
 
-In half of my multitudinous terminal sessions, you will find Vim instances (AND IntelliJ IDEA). Vim has been my editor of choice since I left the womb, and because of the entrenched muscle memory of typing things like “:wq”, I can barely function in other editors.
+In half of my multitudinous terminal sessions, you will find Vim instances. I do all of my coding in IntelliJ IDEA, and use Vim when I need to edit files from a command line. Vim has been my editor of choice since I left the womb, and because of the entrenched muscle memory of typing things like “:wq”, I can barely function in other editors.
 
 I typically use two web browsers in tandem. Because I’m fairly cognizant of web security, I run one “clean” browser (Safari) and one “dirty” browser (Chrome). The browser I use depends on the website I’m visiting.
 
@@ -15,6 +15,6 @@ I rely heavily on keyboard shortcuts for my favourite applications. In fact, mos
 
 In addition to these major parts of my working environment, I lean on a number of tools, programming languages, message queues, and database systems to build my software. To name a few:
 
-1. Tools: SSH, Git, UTM
-2. Languages: Zsh, JAVA, C
-3. MQ and DB: Redis, RabbitMQ, MySQL
+1. Tools: SSH, Git, Postman, UTM
+2. Languages: Zsh, JAVA, C, Assembly language
+3. MQ and DB: Redis, RabbitMQ, MySQL (MySQL Workbench)
