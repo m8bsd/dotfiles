@@ -12,7 +12,5 @@ I rely heavily on keyboard shortcuts for my favourite applications. In fact, mos
 In addition to these major parts of my working environment, I lean on a number of tools, programming languages, message queues, and database systems to build my software. To name a few:
 
 1. Tools: SSH, Git, Postman, UTM
-2. Languages: Zsh, JAVA, C
-3. MQ and DB: Redis, RabbitMQ, MySQL
-
-On servers I mostly run FreeBSD 8.0, but a few systems are still on 7.x (simply because I haven&rsquo;t gotten around to upgrading them yet). I use <a href="http://cr.yp.to/djbdns.html" title="DNS server software.">djbdns</a> for DNS (both authoritative and caching); <a href="http://qmail.org/top.html" title="An SMTP server.">qmail</a> for email; <a href="http://www.ezmlm.org/" title="Mailing list management software.">ezmlm</a> for mailing lists; <a href="https://httpd.apache.org/" title="Web server software.">Apache</a> for web serving (I would probably not pick Apache if I cared about performance, but I don&rsquo;t do anything which needs fantastic HTTP serving performance); <a href="https://www.stunnel.org/index.html" title="A tool to make any TCP connection over SSL.">stunnel</a> for SSL termination (for security reasons, I prefer to keep SSL termination separate from HTTP serving);
+2. Languages: Zsh, HTML, CSS, JAVA, C
+3. MQ and DB: Redis, RabbitMQ, MySQL Workbench
