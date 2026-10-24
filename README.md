@@ -16,12 +16,3 @@ In addition to these major parts of my working environment, I lean on a number o
 3. MQ and DB: Redis, RabbitMQ, MySQL Workbench
 
 <p>On servers I mostly run FreeBSD 8.0, but a few systems are still on 7.x (simply because I haven&rsquo;t gotten around to upgrading them yet). I use <a href="http://cr.yp.to/djbdns.html" title="DNS server software.">djbdns</a> for DNS (both authoritative and caching); <a href="http://qmail.org/top.html" title="An SMTP server.">qmail</a> for email; <a href="http://www.ezmlm.org/" title="Mailing list management software.">ezmlm</a> for mailing lists; <a href="https://httpd.apache.org/" title="Web server software.">Apache</a> for web serving (I would probably not pick Apache if I cared about performance, but I don&rsquo;t do anything which needs fantastic HTTP serving performance); <a href="https://www.stunnel.org/index.html" title="A tool to make any TCP connection over SSL.">stunnel</a> for SSL termination (for security reasons, I prefer to keep SSL termination separate from HTTP serving). </p>
-
-<p>
-  When it comes to building web applications, I use
-  <a href="https://spring.io/projects/spring-boot" title="A Java framework for building standalone applications.">Spring Boot</a>, built with
-  <a href="https://maven.apache.org/" title="A build and dependency management tool for Java.">Maven</a>. Pages are rendered on the server with
-  <a href="https://www.thymeleaf.org/" title="A server-side Java template engine.">Thymeleaf</a> and styled with
-  <a href="https://getbootstrap.com/" title="A CSS framework, originally developed at Twitter.">Twitter Bootstrap</a>, while
-  <a href="https://htmx.org/" title="A library for AJAX and dynamic page updates driven by HTML attributes.">HTMX</a> handles dynamic page behavior without the need to write much JavaScript.
-</p>
