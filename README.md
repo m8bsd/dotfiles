@@ -13,5 +13,4 @@ In addition to these major parts of my working environment, I lean on a number o
 
 1. Tools: SSH, Git, Mutt, Postman, UTM
 2. Languages: Zsh, HTML, CSS, JAVA, C
-3. MQ and DB: Redis, RabbitMQ, MySQL Workbench
-4. Frameworks: HTMX, Bootstrap, Spring Boot, Thymeleaf, Hibernate, JPA
+3. MQ and DB: Redis, RabbitMQ, MySQL
