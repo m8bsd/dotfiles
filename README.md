@@ -11,6 +11,6 @@ I rely heavily on keyboard shortcuts for my favourite applications. In fact, mos
 
 In addition to these major parts of my working environment, I lean on a number of tools, programming languages, message queues, and database systems to build my software. To name a few:
 
-1. Tools: SSH, Git, Mutt, Posting, UTM
+1. Tools: SSH, Git, Mutt, Posting, ranger, UTM
 2. Languages: Zsh, HTML, CSS, JAVA, C
 3. MQ and DB: Redis, RabbitMQ, MySQL
