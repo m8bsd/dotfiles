@@ -1,0 +1,12 @@
+{
+  "editor.fontSize": 18,
+  "editor.fontFamily": "'CaskaydiaMono Nerd Font Mono'",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+  },
+}

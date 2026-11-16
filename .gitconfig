@@ -1,0 +1,35 @@
+[user]
+	name = Michael
+	email = mail@michael.dev
+[color]
+	diff = auto
+[core]
+	editor = vim
+	autocrlf = input
+	excludesfile = ~/.gitignore-global
+[push]
+	default = tracking
+[pull]
+	rebase = true
+[branch]
+	autosetuprebase = always
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[receive]
+	fsckObjects = true
+# Re-enable once Ubuntu upgrades git to version 2.18
+# [protocol]
+# 	version = 2
+[init]
+	defaultBranch = master

@@ -1,0 +1,1056 @@
+Xcursor.theme: whiteglass
+Xcursor.size: 16
+Xft.rgba: none
+
+Emacs*font: -misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso10646-1
+Emacs*menubar.font: Fixed:pixelsize=13:style=SemiCondensed:lang=ru
+Emacs*popup.font: Fixed:pixelsize=13:style=SemiCondensed:lang=ru
+Emacs*dialog.font: Fixed:pixelsize=13:style=SemiCondensed:lang=ru
+Emacs*foreground: grey90
+Emacs*background: grey20
+Emacs*cursorColor: Green
+Emacs*pointerColor: Yellow
+Emacs*scrollBarWidth: 10
+
+XLbiff*font: -misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso10646-1
+XLbiff*fontSet: fixed,-misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso10646-1
+
+URxvt.cursorColor: green
+URxvt.borderColor: white
+URxvt.scrollColor: black
+
+! URxvt.font:        xft:fixed:size=10:width=10
+URxvt.font:        -misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso10646-1
+
+URxvt.scrollBar:   0
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.perl-lib:    /home/leah/.urxvt
+URxvt.perl-ext:    default,matcher,readline,unichr,ziconbeep,-confirm-paste
+!URxvt.perl-ext:    default,url-select,readline,ziconbeep
+URxvt.url-launcher: firefox
+URxvt.matcher.rend.0: -Uline
+URxvt.matcher.button: 3
+!URxvt.keysym.M-l: perl:matcher:list
+!URvxt.url-select.button: 3
+!URxvt.url-select.launcher: firefox
+!URxvt.url-select.underline: true
+URxvt.searchable-scrollback: CM-s
+!URxvt*cutchars:   "\\`\"'&()*,;<=>?@[]^{|}#%+!/:"
+
+URxvt*saveLines:   5500
+URxvt*reverseVideo:false
+URxvt*scrollTtyOutput: false
+URxvt*scrollTtyKeypress: true
+URxvt*scrollWithBuffer: true
+
+! URxvt*foreground:  gray80
+! URxvt*background:  gray10
+
+! URxvt.transparent: 1
+! URxvt.shading: 15
+
+! Resize fonts with C-1,2,3,4,5,6
+URxvt.keysym.C-9: command:\033]710;6x13\007
+URxvt.keysym.C-1: command:\033]710;-artwiz-lime.de-medium-r-normal--10-110-75-75-m-50-iso8859-1\007
+URxvt.keysym.C-F1: command:\033]710;xft:Atari:pixelsize=8:antialias=false:hinting=none\007
+URxvt.keysym.C-2: command:\033]710;6x13\007
+URxvt.keysym.C-F2: command:\033]710;xft:Lucida Typewriter:pixelsize=12\007
+URxvt.keysym.C-3: command:\033]710;xft:Terminus:pixelsize=15\007
+URxvt.keysym.C-F3: command:\033]710;-chris2-fixed-medium-r-condensed--13-120-75-75-c-50-iso10646-1\007
+URxvt.keysym.C-4: command:\033]710;xft:Terminus:pixelsize=20\007
+URxvt.keysym.C-F4: command:\033]710;-chris2-sq-medium-r-normal--15-140-75-75-c-100-iso8859-1\007
+URxvt.keysym.C-5: command:\033]710;xft:Terminus:pixelsize=30\007
+URxvt.keysym.C-F5: command:\033]710;xft:Iosevka Leah2:pixelsize=16\007
+URxvt.keysym.C-6: command:\033]710;xft:Iosevka Leah2:pixelsize=32\007
+
+! Resize terminal with C-7,8
+URxvt.keysym.C-7: command:\033[8;24;80t 
+URxvt.keysym.C-8: command:\033[8;50;80t 
+
+! Move terminal with C-0,-,=
+URxvt.keysym.C-0: command:\033[3;0;116t
+URxvt.keysym.C-minus: command:\033[3;483;116t
+URxvt.keysym.C-equal: command:\033[3;965;116t
+
+! For screen/tmux.
+! \001 is C-a.
+URxvt.keysym.M-Left:  \001p
+URxvt.keysym.M-Right: \001n
+
+! chris2
+! URxvt*color0:      #000000
+! URxvt*color1:      #9e1828
+! URxvt*color2:      #aece92
+! URxvt*color3:      #968a38
+! URxvt*color4:      #414171
+! URxvt*color5:      #963c59
+! URxvt*color6:      #418179
+! URxvt*color7:      #bebebe
+! URxvt*color8:      #666666
+! URxvt*color9:      #cf6171
+! URxvt*color10:     #c5f779
+! URxvt*color11:     #fff796
+! URxvt*color12:     #4186be
+! URxvt*color13:     #cf9ebe
+! URxvt*color14:     #71bebe
+! URxvt*color15:     #ffffff
+
+! switch to digerati
+! URxvt*color0: #303030
+! URxvt*color1: #c03000
+! URxvt*color2: #b1d631
+! URxvt*color3: #fecf35
+! URxvt*color4: #426870
+! URxvt*color5: #6D506D
+! URxvt*color6: #4bb5c1
+! URxvt*color7: #e2e2e5
+! URxvt*color8: #5F5F5F
+! URxvt*color9: #FF3A78
+! URxvt*color10: #A6CD07
+! ! URxvt*color11: #B5C865
+! ! use from tango:
+! URxvt*color11:     #FCE94F
+! URxvt*color12: #4A7781
+! URxvt*color13: #FF3B77
+! URxvt*color14: #4bb5c1
+! URxvt*color15: #e2e2e5
+
+! switch to greenxii
+! hacked version of http://ompldr.org/vaG9icw/xiin10.png
+URxvt*transparent: 0
+URxvt*foreground: #d4d4d4
+URxvt*background: #101010
+URxvt*color0: #333333
+URxvt*color1: #91ba0d
+URxvt*color2: #aadb0f
+URxvt*color3: #ffffff
+URxvt*color4: #666666
+URxvt*color5: #d7d7d7
+URxvt*color6: #d4d4d4
+URxvt*color7: #d3d3d3
+URxvt*color8: #333333
+URxvt*color9: #aadb0f
+URxvt*color10: #aadb0f
+URxvt*color11: #aadb0f
+URxvt*color12: #666666
+URxvt*color13: #d7d7d7
+URxvt*color14: #d4d4d4
+URxvt*color15: #d3d3d3
+ 
+! Tango
+tango*foreground:  #000000
+tango*background:  #ffffff
+tango*color0:      #2E3436
+tango*color1:      #CC0000
+tango*color2:      #4E9A06
+tango*color3:      #C4A000
+tango*color4:      #3465A4
+tango*color5:      #75507B
+tango*color6:      #06989A
+tango*color7:      #D3D7CF
+tango*color8:      #555753
+tango*color9:      #EF2929
+tango*color10:     #8AE234
+tango*color11:     #FCE94F
+tango*color12:     #729FCF
+tango*color13:     #AD7FA8
+tango*color14:     #34E2E2
+tango*color15:     #EEEEEC
+
+! InfiniteRed
+infred*foreground: #f2f2f2
+infred*background: #101010
+infred*color0:    #6c6c6c
+infred*color1:    #e9897c
+infred*color2:    #b6e77d
+infred*color3:    #ecebbe
+infred*color4:    #a9cdeb
+infred*color5:    #ea96eb
+infred*color6:    #c9caec
+infred*color7:    #f2f2f2
+infred*color8:    #747474
+infred*color9:    #f99286
+infred*color10:    #c3f786
+infred*color11:    #fcfbcc
+infred*color12:    #b6defb
+infred*color13:    #fba1fb
+infred*color14:    #d7d9fc
+infred*color15:    #e2e2e2
+
+! Monochrome
+mono*foreground: #B0B0B0
+mono*background: #282828
+mono*color0: #000000
+mono*color1: #434343
+mono*color2: #6B6B6B
+mono*color3: #969696
+mono*color4: #4A4A4A
+mono*color5: #707070
+mono*color6: #A9A9A9
+mono*color7: #FFFFFF
+mono*color8: #222222
+mono*color9: #434343
+mono*color10: #A5A5A5
+mono*color11: #E5E5E5
+mono*color12: #4D4D4D
+mono*color13: #747474
+mono*color14: #C4C4C4
+mono*color15: #DEDEDE
+
+mono2*foreground: #ffffff
+mono2*background: #000000
+mono2*color0:    #000000
+mono2*color1:    #777777
+mono2*color2:    #888888
+mono2*color3:    #999999
+mono2*color4:    #aaaaaa
+mono2*color5:    #bbbbbb
+mono2*color6:    #cccccc
+mono2*color7:    #ffffff
+mono2*color8:    #000000
+mono2*color9:    #999999
+mono2*color10:   #aaaaaa
+mono2*color11:   #bbbbbb
+mono2*color12:   #cccccc
+mono2*color13:   #dddddd
+mono2*color14:   #eeeeee
+mono2*color15:   #ffffff
+
+mono3*background: #222c2e
+mono3*foreground: #dee2e3
+mono3*cursorColor: #545f65
+mono3*color0:      #000000
+mono3*color1:      #545f65
+mono3*color2:      #6d787c
+mono3*color3:      #dee2e3
+mono3*color4:      #9ea8aa
+mono3*color5:      #97a1a3
+mono3*color6:      #97a1a3
+mono3*color7:      #dee2e3
+mono3*color8:      #666666
+mono3*color9:      #dae3e8
+mono3*color10:     #99a2a7
+mono3*color11:     #efef60
+mono3*color12:     #dee2e3
+mono3*color13:     #c2c7ca
+mono3*color14:     #c2c7ca
+mono3*color15:     #efefef
+
+! tweaked mono3
+monochris*background: grey14
+monochris*foreground: grey88
+monochris*cursorColor: green
+monochris*color0:      #000000
+monochris*color1:      #545f65
+monochris*color2:      #6d787c
+monochris*color3:      #dee2e3
+monochris*color4:      #9ea8aa
+monochris*color5:      #97a1a3
+monochris*color6:      #97a1a3
+monochris*color7:      #dee2e3
+monochris*color8:      #666666
+monochris*color9:      #dae3e8
+monochris*color10:     #99a2a7
+monochris*color11:     #efef60
+monochris*color12:     #dee2e3
+monochris*color13:     #c2c7ca
+monochris*color14:     #c2c7ca
+monochris*color15:     #efefef
+
+monowhite*background: #FFFFFF
+monowhite*foreground: #000000
+monowhite*color0:  #FFFFFF
+monowhite*color1:  #121212
+monowhite*color2:  #A5A5A5
+monowhite*color3:  #777777
+monowhite*color4:  #999999
+monowhite*color5:  #4C4C4C
+monowhite*color6:  #2B2B2B
+monowhite*color7:  #000000
+monowhite*color8:  #9A9A9A
+monowhite*color9:  #1C1C1C
+monowhite*color10: #A4A4A4
+monowhite*color11: #646464
+monowhite*color12: #7C7C7C
+monowhite*color13: #515151
+monowhite*color14: #322929
+monowhite*color15: #101010
+
+! bright-neon
+neon*color0:  #000000
+neon*color1:  #bf4646
+neon*color2:  #67b25f
+neon*color3:  #cfc44e
+neon*color4:  #516083
+neon*color5:  #ca6eff
+neon*color6:  #92b2f8
+neon*color7:  #d5d5d5
+neon*color8:  #666666
+neon*color9:  #f48a8a
+neon*color10: #a5d79f
+neon*color11: #e1da84
+neon*color12: #a2bbff
+neon*color13: #e2b0ff
+neon*color14: #bacdf8
+neon*color15: #d5d5d5
+
+! subtle-neon
+subtle-neon*color0:  #000000
+subtle-neon*color1:  #bf7979
+subtle-neon*color2:  #97b26b
+subtle-neon*color3:  #cdcda1
+subtle-neon*color4:  #4a54A3
+subtle-neon*color5:  #9c3885
+subtle-neon*color6:  #88aadd
+subtle-neon*color7:  #b3b3b3
+subtle-neon*color8:  #505450
+subtle-neon*color9:  #f4a45f
+subtle-neon*color10: #c5f779
+subtle-neon*color11: #ffffaf
+subtle-neon*color12: #7d87A4
+subtle-neon*color13: #e628ba
+subtle-neon*color14: #99ccff
+subtle-neon*color15: #ffffff
+
+! Theme Ten
+ten*color0:  rgb:00/00/00
+ten*color1:  rgb:98/56/5e
+ten*color2:  rgb:66/82/5d
+ten*color3:  rgb:96/91/76
+ten*color4:  rgb:4d/65/85
+ten*color5:  rgb:96/73/95
+ten*color6:  rgb:5f/7f/7b
+ten*color7:  rgb:b3/b3/b3
+ten*color8:  rgb:73/73/73
+ten*color9:  rgb:cf/a3/a9
+ten*color10: rgb:ca/f7/bb
+ten*color11: rgb:ff/f8/bc
+ten*color12: rgb:83/a3/be
+ten*color13: rgb:bb/a9/cf
+ten*color14: rgb:96/cc/cc
+ten*color15: rgb:ff/ff/ff
+
+! Taters colors
+taters*foreground: #DDEEDD
+taters*background: #1C1C1C
+taters*color0: #1C1C1C
+taters*color8: #4d4d4d
+taters*color1: #D81860
+taters*color9: #F00060
+taters*color2: #B7CE42
+taters*color10: #BDE077
+taters*color3: #FEA63C
+taters*color11: #FFE863
+taters*color4: #66AABB
+taters*color12: #AACCBB
+taters*color5: #B7416E
+taters*color13: #BB4466
+taters*color6: #5E7175
+taters*color14: #A3BABF
+taters*color7: #DDEEDD
+taters*color15: #6C887A
+
+! marzo
+marzo*foreground: #DDEEDD
+marzo*background: #1C1C1C
+marzo*color0: #1C1C1C
+marzo*color8: #4d4d4d
+marzo*color1: #D81860
+marzo*color9: #F00060
+marzo*color2: #B7CE42
+marzo*color10: #BDE077
+marzo*color3: #FEA63C
+marzo*color11: #ffa32c
+marzo*color4: #66AABB
+marzo*color12: #509ec6
+marzo*color5: #B7416E
+marzo*color13: #BB4466
+marzo*color6: #5E7175
+marzo*color14: #526164
+marzo*color7: #DDEEDD
+marzo*color15: #EFEFEF
+
+! Zenburn
+zenburn*color0:  #1E2320
+zenburn*color1:  #705050
+zenburn*color2:  #60b48a
+zenburn*color3:  #dfaf8f
+zenburn*color4:  #506070
+zenburn*color5:  #dc8cc3
+zenburn*color6:  #8cd0d3
+zenburn*color7:  #dcdccc
+zenburn*color8:  #709080
+zenburn*color9:  #dca3a3
+zenburn*color10: #c3bf9f
+zenburn*color11: #f0dfaf
+zenburn*color12: #94bff3
+zenburn*color13: #ec93d3
+zenburn*color14: #93e0e3
+zenburn*color15: #ffffff
+
+! Colors of Thayer, found via Daisuke_Aramaki and based on Monokai
+thayer*color0: #262729
+thayer*color8: #554444
+thayer*color1: #F92671
+thayer*color9: #F92671
+!thayer*color9: #FF669D
+thayer*color2: #A6E22E
+thayer*color10: #A6E22E
+!thayer*color10: #BEED5F
+thayer*color3: #FD971F
+thayer*color11: #FD971F
+!thayer*color11: #E6DB74
+thayer*color4: #66D9EF
+thayer*color12: #66D9EF
+thayer*color5: #9E6FFE
+thayer*color13: #9E6FFE
+thayer*color6: #5E7175
+thayer*color14: #A3BABF
+!thayer*color7: #CCCCC6
+thayer*color7: #F8F8F2
+thayer*color15: #F8F8F2
+
+! thayer tangoesque
+tangoesque*background:  #222222
+tangoesque*foreground:  #aaaaaa
+tangoesque*color0:      #000000
+tangoesque*color8:      #555753
+tangoesque*color1:      #ff6565
+tangoesque*color9:      #ff8d8d
+tangoesque*color2:      #93d44f
+tangoesque*color10:     #c8e7a8
+tangoesque*color3:      #eab93d
+tangoesque*color11:     #ffc123
+tangoesque*color4:      #204a87
+tangoesque*color12:     #3465a4
+tangoesque*color5:      #ce5c00
+tangoesque*color13:     #f57900
+tangoesque*color6:      #89b6e2
+tangoesque*color14:     #46a4ff
+tangoesque*color7:      #cccccc
+tangoesque*color15:     #ffffff
+
+! thayer lightr,
+! https://github.com/thayerwilliams/dotfiles-msi
+lightr*foreground:#555555
+lightr*background:#ffffff
+lightr*color0: #555555
+lightr*color8: #222222
+lightr*color1: #ff005f
+lightr*color9: #ff00af
+lightr*color2: #008700
+lightr*color10: #00af00
+lightr*color3: #ff8700
+lightr*color11: #ffaf00
+lightr*color4: #000087
+lightr*color12: #0000ff
+lightr*color5: #870087
+lightr*color13: #af00d7
+lightr*color6: #0087af
+lightr*color14: #00afd7
+lightr*color7: #afafaf
+lightr*color15: #ffffff
+
+! thayer grey
+grey*foreground: #333333
+grey*background: #ffffff
+grey*color0: #000000
+grey*color8: #222222
+grey*color1: #434343
+grey*color9: #434343
+grey*color2: #6b6b6b
+grey*color10: #A5a5a5
+grey*color3: #969696
+grey*color11: #e5e5e5
+grey*color4: #4a4a4a
+grey*color12: #4d4d4d
+grey*color5: #707070
+grey*color13: #747474
+grey*color6: #a9a9a9
+grey*color14: #c4c4c4
+grey*color7: #ffffff
+grey*color15: #dedede
+
+! Digerati
+! +1 good
+digerati*color0: #303030
+digerati*color1: #c03000
+digerati*color2: #b1d631
+digerati*color3: #fecf35
+digerati*color4: #426870
+digerati*color5: #6D506D
+digerati*color6: #4bb5c1
+digerati*color7: #e2e2e5
+digerati*color8: #5F5F5F
+digerati*color9: #FF3A78
+digerati*color10: #A6CD07
+digerati*color11: #B5C865
+digerati*color12: #4A7781
+digerati*color13: #FF3B77
+digerati*color14: #4bb5c1
+digerati*color15: #e2e2e5
+
+! Hornet
+hornet*color0: #303030
+hornet*color1: #c03000
+hornet*color2: #b1d631
+hornet*color3: #fecf35
+hornet*color4: #4b5661
+hornet*color5: #7e8aa2
+hornet*color6: #4bb5c1
+hornet*color7: #e2e2e5
+hornet*color8: #303030
+hornet*color9: #c03000
+hornet*color10: #b1d631
+hornet*color11: #fecf35
+hornet*color12: #4b5661
+hornet*color13: #7e8aa2
+hornet*color14: #4bb5c1
+hornet*color15: #e2e2e5
+
+! Merged
+merged*color0: #000000
+merged*color1: #963C59
+merged*color2: #76B243
+merged*color3: #B2B27F
+merged*color4: #5986B2
+merged*color5: #B250B1
+merged*color6: #698FB2
+merged*color7: #8f8f8f
+merged*color8: #3c414c
+merged*color9: #CF6171
+merged*color10: #A8FF60
+merged*color11: #FFFFB6
+merged*color12: #6699CC
+merged*color13: #FF73FD
+merged*color14: #96CBFE
+merged*color15: #F6F3E8
+
+! localtog
+localtog*background: #000000
+localtog*foreground: #ffffff
+localtog*color0: #050505
+localtog*color1: #b04020
+localtog*color2: #afd700
+localtog*color3: #eab93d
+localtog*color4: #204a87
+localtog*color5: #d6156c
+localtog*color6: #89b6e2
+localtog*color7: #ffffff
+localtog*color8: #777777
+localtog*color9: #dd4010
+localtog*color10: #daff30
+localtog*color11: #ffc123
+localtog*color12: #3465a4
+localtog*color13: #fe4365
+localtog*color14: #46a4ff
+localtog*color15: #dddddd
+
+! candymouse
+candymouse*background: #090909
+candymouse*foreground: #a9a6af
+candymouse*color0: #090909
+candymouse*color1: #a28699
+candymouse*color2: #799c99
+candymouse*color3: #b0ad90
+candymouse*color4: #87afd7
+candymouse*color5: #a488d9
+candymouse*color6: #6c7373
+candymouse*color7: #8d8d8d
+candymouse*color8: #171717
+candymouse*color9: #9c8093
+candymouse*color10: #85afa9
+candymouse*color11: #c4c497
+candymouse*color12: #98a7b6
+candymouse*color13: #9f8bab
+candymouse*color14: #a3babf
+candymouse*color15: #9d9d9d
+
+! rb
+rb*foreground:    #fffef6
+rb*background:    #696969
+rb*color0:        #424242
+rb*color1:        #d19485
+rb*color2:        #a0a57e
+rb*color3:        #debc9c
+rb*color4:        #98a1b9
+rb*color5:        #ab716d
+rb*color6:        #98b9b1
+rb*color7:        #c4c4c4
+rb*color8:        #2b2b2b
+rb*color9:        #c37561
+rb*color10:       #7f8264
+rb*color11:       #b58b62
+rb*color12:       #465C80
+rb*color13:       #7a4a46
+rb*color14:       #769293
+rb*color15:       #91969b
+
+! octoploid, KDE Black on White
+bow*background: #fffdf0
+bow*foreground: #000000
+bow*color8: #121212
+bow*color0: #686868
+bow*color9: #b22121
+bow*color1: #cd2525
+bow*color10: #8abe31
+bow*color2: #8ab83f
+bow*color11: #ffa500
+bow*color3: #ffb70f
+bow*color12: #265b97
+bow*color4: #3f6fd0
+bow*color13: #ee3a8e
+bow*color5: #cd327a
+bow*color14: #668b8b
+bow*color6: #008b8b
+bow*color15: #b2b2b2
+bow*color7: #e8e8e8
+bow*transparent: 0
+
+! octoploid2, http://i.imgur.com/b0QAv.png
+octo*background: #EEEEEE
+octo*foreground: #444444
+octo*color8: #878787
+octo*color0: #BCBCBC
+octo*color9: #b22121
+octo*color1: #FFAFAF
+octo*color10: #8abe31
+octo*color2: #8ab83f
+octo*color11: #CC9631
+octo*color3: #EDAE39
+octo*color12: #265b97
+octo*color4: #AFD7D7
+octo*color13: #ee3a8e
+octo*color5: #cd327a
+octo*color14: #668b8b
+octo*color6: #008b8b
+octo*color15: #b2b2b2
+octo*color7: #e8e8e8
+octo*transparent: 0
+
+! delerious010, hacked
+!dele*foreground: #313131
+!dele*background: #f0f0f0
+dele*background: #EEEEEE
+dele*foreground: #444444
+dele*color0 :  #252525
+dele*color1 :  #ba7373
+dele*color2 :  #739456
+dele*color3 :  #a4712e
+dele*color4 :  #25414f
+dele*color5 :  #6f4f70
+dele*color6 :  #3c6f69
+dele*color7 :  #ffffff
+dele*color8 :  #666666
+dele*color9 :  #c14b4b
+dele*color10:  #6ca318
+!dele*color11:  #7f672e
+dele*color11:  #f2c73e
+dele*color12:  #537595
+dele*color13:  #a971a7
+dele*color14:  #70999a
+dele*color15:  #cacaca
+dele*transparent: 1
+dele*shading: 185
+dele*font: xft:monaco:pixelsize=10
+
+! jhvid, https://bbs.archlinux.org/viewtopic.php?pid=795103#p795103
+! bright on dark
+jhvid*background: #353333
+jhvid*foreground: #ffffff
+jhvid*color0: #464444
+jhvid*color1: #EF3460
+jhvid*color2: #BDEF34
+jhvid*color3: #EFC334
+jhvid*color4: #34BDEF
+jhvid*color5: #B300FF
+jhvid*color6: #3DD8FF
+jhvid*color7: #FFFFFF
+jhvid*color8: #8a8888
+jhvid*color9: #F25A7D
+jhvid*color10: #DCF692
+jhvid*color11: #F6DF92
+jhvid*color12: #92AAF6
+jhvid*color13: #DF92F6
+jhvid*color14: #5AF2CE
+jhvid*color15: #FFFFFF
+
+! libre00kiez
+librec00kiez*foreground: #DDEEDD
+librec00kiez*background: #181818
+librec00kiez*color0: #222222
+librec00kiez*color8: #454545
+librec00kiez*color1: #c5000b
+librec00kiez*color9: #ff0000
+librec00kiez*color2: #579d1c
+librec00kiez*color10:#aecf00
+librec00kiez*color3: #ff420e
+librec00kiez*color11:#ff950e
+librec00kiez*color4: #004586
+librec00kiez*color12:#0066cc
+librec00kiez*color5: #9932CC
+librec00kiez*color13:#d11793
+librec00kiez*color6: #5E7175
+librec00kiez*color7: #FFFFFF
+librec00kiez*color15:#FFFFFF
+
+! day
+! merged from dele, digerati, librec00kiez and lightr.
+day*foreground:#222222
+day*background:#ffffff
+day*color0: #222222
+day*color8: #555555
+day*color1: #ff005f
+day*color9: #ff00af
+day*color2: #008700
+day*color10: #00af00
+day*color3: #fecf35
+day*color11: #fecf35
+day*color4: #004586
+day*color12: #0066cc
+day*color5: #870087
+day*color13: #af00d7
+day*color6: #0087af
+day*color14: #00afd7
+day*color7: #eeeeee
+day*color15:  #cacaca
+day*transparent: 1
+day*shading: 185
+
+! matrix, tinted thayer grey
+matrix*foreground: #3f7f3f
+matrix*background: #000000
+matrix*color0: #000000
+matrix*color8: #112211
+matrix*color1: #214321
+matrix*color9: #214321
+matrix*color2: #356b35
+matrix*color10: #52a552
+matrix*color3: #4b964b
+matrix*color11: #72e572
+matrix*color4: #254a25
+matrix*color12: #264d26
+matrix*color5: #387038
+matrix*color13: #3a743a
+matrix*color6: #54a954
+matrix*color14: #62c462
+matrix*color7: #7fff7f
+matrix*color15: #6fde6f
+matrix*transparent: 0
+
+! sad
+sad*color0: #232323
+sad*color8: #191818
+sad*color1: #834040
+sad*color9: #5f2f2f
+sad*color2: #798a7c
+sad*color10: #5f6b61
+sad*color3: #aca892
+sad*color11: #888573
+sad*color4: #6d8388
+sad*color12: #5d7074
+sad*color5: #887781
+sad*color13: #685b63
+sad*color6: #989081
+sad*color14: #777166
+sad*color7: #535353
+sad*color15: #494848
+
+! x::dotshare http://dotshare.it/dots/87/
+xdotshare*foreground: #d7d0c7
+xdotshare*background: #151515
+xdotshare*color0:     #101010
+xdotshare*color8:     #404040
+xdotshare*color1:     #e84f4f
+xdotshare*color9:     #d23d3d
+xdotshare*color2:     #b8d68c
+xdotshare*color10:    #a0cf5d
+xdotshare*color3:     #e1aa5d
+xdotshare*color11:    #f39d21
+xdotshare*color4:     #7dc1cf
+xdotshare*color12:    #4e9fb1
+xdotshare*color5:     #9b64fb
+xdotshare*color13:    #8542ff
+xdotshare*color6:     #6d878d
+xdotshare*color14:    #42717b
+xdotshare*color7:     #dddddd
+xdotshare*color15:    #dddddd
+
+! Ghoul, https://bbs.archlinux.org/viewtopic.php?pid=957603#p957603
+ghoul*color0: #000000
+ghoul*color1: #8e5c4e
+ghoul*color2: #6c7e55
+ghoul*color3: #b89f63
+ghoul*color4: #7fb8d8
+ghoul*color5: #956d9d
+ghoul*color6: #4c8ea1
+ghoul*color7: #808080
+ghoul*color8: #454545
+ghoul*color9: #cc896d
+ghoul*color10: #c4df90
+ghoul*color11: #ffe080
+ghoul*color12: #b8ddea
+ghoul*color13: #c18fcb
+ghoul*color14: #6bc1d0
+ghoul*color15: #e0e0e0
+ghoul*background: #111111
+ghoul*foreground: #e0e0e0
+
+! http://dotshare.it/dots/199/
+xgetfresh*color0:     #393939
+xgetfresh*color1:     #BF1E2D
+xgetfresh*color2:     #9DBA3A
+xgetfresh*color3:     #F5B915
+xgetfresh*color4:     #1CA1DB
+xgetfresh*color5:     #652F90
+xgetfresh*color6:     #EA7D24
+xgetfresh*color7:     #E7E8E9
+xgetfresh*color8:     #AF875F
+xgetfresh*color9:     #E7212A
+xgetfresh*color10:    #A9C938
+xgetfresh*color11:    #F7D325
+xgetfresh*color12:    #00AFDA
+xgetfresh*color13:    #894E9F
+xgetfresh*color14:    #F79321
+xgetfresh*color15:    #F3F3F4
+
+! http://dotshare.it/dots/31/
+sexcolors*color0:    #252525
+sexcolors*color1:    #FF9F95
+sexcolors*color2:    #A6E22E
+sexcolors*color3:    #FD971F
+sexcolors*color4:    #435e87
+sexcolors*color5:    #789ec6
+sexcolors*color6:    #5E7175
+sexcolors*color7:    #DBDCDC
+sexcolors*color8:    #454545
+sexcolors*color9:    #FF8D80
+sexcolors*color10:   #B6E354
+sexcolors*color11:   #FD971F
+sexcolors*color12:   #587aa4
+sexcolors*color13:   #46a4ff
+sexcolors*color14:   #A3BABF
+sexcolors*color15:   #FDFDFD
+
+tirmm*background:       #1B1D1E
+tirmm*foreground:       #FFFFFF
+trimm*highlightColor:   #0A9DFF
+tirmm*color0:           #000000
+tirmm*color1:           #FF0000
+tirmm*color2:           #A6E22E
+tirmm*color3:           #FD971F
+tirmm*color4:           #AE81FF
+tirmm*color5:           #F92672
+tirmm*color6:           #66D9EF
+tirmm*color7:           #F2F2F2
+tirmm*color8:           #5D5D5D
+tirmm*color9:           #FF0000
+tirmm*color10:          #A6E22E
+tirmm*color11:          #FD971F
+tirmm*color12:          #AE81FF
+tirmm*color13:          #F92672
+tirmm*color14:          #66D9EF
+tirmm*color15:          #FFFFFF
+
+dave*foreground: #000000
+dave*cursorColor: #000000
+dave*background: #dddddd
+dave*colorMode: false
+dave*font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
+dave*transparent: 0
+dave*color0: #000000
+dave*color1: #ff005f
+dave*color2: #008700
+dave*color3: #d8bf00
+dave*color4: #004586
+dave*color5: #870087
+dave*color6: #0087af
+dave*color7: #777777
+dave*color8: #000000
+dave*color9: #ff00af
+dave*color10: #00af00
+dave*color11: #d8bf00
+dave*color12: #0066cc
+dave*color13: #af00d7
+dave*color14: #00afd7
+dave*color15: #aaaaaa
+
+! hacked version of http://ompldr.org/vaG9icw/xiin10.png
+greenxii*transparent: 0
+greenxii*foreground: #d4d4d4
+greenxii*background: #101010
+greenxii*color0: #333333
+greenxii*color1: #91ba0d
+greenxii*color2: #aadb0f
+greenxii*color3: #ffffff
+greenxii*color4: #666666
+greenxii*color5: #d7d7d7
+greenxii*color6: #d4d4d4
+greenxii*color7: #d3d3d3
+greenxii*color8: #333333
+greenxii*color9: #aadb0f
+greenxii*color10: #aadb0f
+greenxii*color11: #aadb0f
+greenxii*color12: #666666
+greenxii*color13: #d7d7d7
+greenxii*color14: #d4d4d4
+greenxii*color15: #d3d3d3
+!greenxii*cursorColor: #aadb0f
+
+XTerm*foreground:  gray80
+XTerm*background:  gray10
+XTerm*cursorColor: green
+XTerm*saveLines: 5500
+XTerm*scrollKey: true
+XTerm*scrollTtyOutput: false
+XTerm*visualBell: true
+XTerm*showBlinkAsBold: true
+
+paper*foreground: #040914
+paper*background: #e5dfc5
+paper*cursorColor: #000000
+paper*internalBorder: 2
+paper*borderColor: #e5dfc5
+paper*font: xft:Unifont
+paper*faceName: Unifont
+paper*colorMode: false
+paper*transparent: 0
+paper*color0: #000000
+paper*color1: #ff005f
+paper*color2: #008700
+paper*color3: #d8bf00
+paper*color4: #004586
+paper*color5: #870087
+paper*color6: #0087af
+paper*color7: #777777
+paper*color8: #000000
+paper*color9: #ff00af
+paper*color10: #00af00
+paper*color11: #d8bf00
+paper*color12: #0066cc
+paper*color13: #af00d7
+paper*color14: #00afd7
+paper*color15: #aaaaaa
+
+light*foreground: #535353
+light*background: #eeeeee
+light*font: -chris2-sq-medium-r-normal--15-140-75-75-c-100-iso8859-1
+light*transparent: 0
+light*color0: #303030
+light*color1: #c03000
+light*color2: #b1d631
+light*color3: #FAB000
+light*color4: #426870
+light*color5: #6D506D
+light*color6: #4bb5c1
+light*color7: #999999
+light*color8: #777777
+light*color9: #FF3A78
+light*color10: #A6CD07
+light*color11: #FAB000
+light*color12: #4A7781
+light*color13: #FF3B77
+light*color14: #4bb5c1
+light*color15: #555555
+
+darkearth*transparent: 0
+darkearth*foreground: #bfa05a
+darkearth*background: #322d29
+darkearth*color0: #695f59
+darkearth*color1: #b59987
+darkearth*color2: #bfa05a
+darkearth*color3: #ffffff
+darkearth*color4: #8b7b55
+darkearth*color5: #d7d7d7
+darkearth*color6: #8b7b55
+darkearth*color7: #d3d3d3
+darkearth*color8: #fff3eb
+darkearth*color9: #fff3eb
+darkearth*color10: #fecb52
+darkearth*color11: #fecb52
+darkearth*color12: #8b7b55
+darkearth*color13: #d7d7d7
+darkearth*color14: #8b7b55
+darkearth*color15: #89776c
+
+! purple netbsd (ng0)
+purple*foreground:   #e0e0df
+purple*background:   #000000
+purple*color0:       #050605
+purple*color8:       #9c9c9c
+purple*color1:       #9850ac
+purple*color9:       #9850ac
+purple*color2:       #ca62d4
+purple*color10:      #ca62d4
+purple*color3:       #ed32ff
+purple*color11:      #ed32ff
+purple*color4:       #95837f
+purple*color12:      #95837f
+purple*color5:       #a1a1a0
+purple*color13:      #a1a1a0
+purple*color6:       #c4bbb5
+purple*color14:      #c4bbb5
+purple*color7:       #e0e0df
+purple*color15:      #e0e0df
+
+root*background:  #3a1a1a
+
+prop*p9font:   -*-lucida-medium-r-*-*-12-*-*-*-*-*-*-*
+*p9font:       -misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso10646-1
+wily*p9fixed:  -misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso10646-1
+wily*font:     -*-lucida-medium-r-*-*-12-*-*-*-*-*-*-*
+
+SshAskpass*maximumCount: 5
+XScreenSaver.newLoginCommand:
+
+! 10dec2023  +leah+
+Zutty*fontpath: /home/leah/.fonts:/usr/share/fonts
+Zutty*font: 6x13
+Zutty*dwfont: Symbola
+Zutty*border: 0
+Zutty*saveLines: 5500
+Zutty*cr: #00ff00
+Zutty*fg: #d4d4d4
+Zutty*bg: #101010
+Zutty*color0: #333333
+Zutty*color1: #91ba0d
+Zutty*color2: #aadb0f
+Zutty*color3: #ffffff
+Zutty*color4: #666666
+Zutty*color5: #d7d7d7
+Zutty*color6: #d4d4d4
+Zutty*color7: #d3d3d3
+Zutty*color8: #333333
+Zutty*color9: #aadb0f
+Zutty*color10: #aadb0f
+Zutty*color11: #aadb0f
+Zutty*color12: #666666
+Zutty*color13: #d7d7d7
+Zutty*color14: #d4d4d4
+Zutty*color15: #d3d3d3
+
+! 03jul2024  +leah+  https://github.com/catppuccin/urxvt/blob/main/mocha.Xresources
+mocha*transparent: 0
+mocha*background: #1E1E2E
+mocha*foreground: #CDD6F4
+mocha*color0: #45475A
+mocha*color8: #585B70
+mocha*color1: #F38BA8
+mocha*color9: #F38BA8
+mocha*color2: #A6E3A1
+mocha*color10: #A6E3A1
+mocha*color3: #F9E2AF
+mocha*color11: #F9E2AF
+mocha*color4: #89B4FA
+mocha*color12: #89B4FA
+mocha*color5: #F5C2E7
+mocha*color13: #F5C2E7
+mocha*color6: #94E2D5
+mocha*color14: #94E2D5
+mocha*color7: #BAC2DE
+mocha*color15: #A6ADC8
